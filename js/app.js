@@ -8,6 +8,7 @@ var lastfmApp = angular.module('lastfmApp', [
   'lastfmController'
 ]);
 
+//Route info about the app, load top artists on default, and when users click on any artist, display the detail page.
 lastfmApp.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.

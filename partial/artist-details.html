@@ -1,38 +1,49 @@
-<div class='container-fluid view-frame'>
+<div class='container-fluid'>
+	<!-- using the bootstrap grid system -->
 	<div class='row'>
+		<!-- display artist picture on the left -->
 		<div class="col-md-3">
 			<img src='{{artist.image[4]["#text"]}}'>
 
 			
 		</div>
+
+		<!-- and other info on the right -->
 		<div class="col-md-9">
 			<h1 class='name'>{{artist.name}}</h1>
 			
+			<!-- display band member info here, if the artist is a band -->
 			<dl ng-hide="!artist.bandmembers" class="dl-horizontal">
 				<dt>Members:</dt>
 				<dd>
 					<ul class="list-unstyled">
 					<li ng-repeat='member in artist.bandmembers.member'>
 						{{member.name}}
-						<span  ng-hide="!member.yearfrom"> Joined: {{member.yearfrom}} </span>
+						<span  ng-hide="!member.yearfrom"> (Since {{member.yearfrom}}) </span>
 					</li>
 					</ul>
 				</dd>
 			</dl>
 
+			<!-- Summary of the artist TODO: Unescape the html in this section -->
 			<dl class="dl-horizontal">
 				<dt>Bio:</dt>
 			
 				<dd class='artist_summary'>{{artist.bio.summary}}</dd>
 			</dl>
+
+			<!-- Play count on lastfm -->
 			<dl class="dl-horizontal">
 				<dt>Play count:</dt>
 				<dd>{{artist.stats.playcount}}</dd>
 			</dl>
+			<!-- Number of listeners on lastfm -->
 			<dl class="dl-horizontal">
 				<dt>Listener:</dt>
 				<dd>{{artist.stats.listeners}}</dd>
 			</dl>
+
+			<!-- List of similar artists -->
 			<dl class="dl-horizontal">
 			<dt>Similar artists:</dt>
 			<dd><ul class="list-unstyled list-inline">
