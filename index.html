@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app='lastfmApp'>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/animation.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="js/masonry.pkgd.min.js"></script>
+<script src="http://desandro.github.io/imagesloaded/imagesloaded.pkgd.min.js"></script>
+<script src="js/angular.min.js"></script>
+<script src="js/angular-route.min.js"></script>
+<script src="js/angular.resource.js"></script>
+<script src="js/angular.animation.js"></script>
+
+<script src="js/angular-masonry.js"></script>
+<script src="js/app.js"></script>
+<script src="js/controller.js"></script>
+</head>
+
+<body ng-controller="ArtistsListCtrl">
+
+<div id='header'>
+	<div id='search_container' ng-controller="SearchCtrl">
+		Search: <input id='querybox' type='text' ng-change="change()" ng-model="liveQuery">
+		<div ng-show='searchresults' id='liveSearchResults'>
+			<div class='result' ng-repeat="artist in searchresults">
+				<a href='#/artist/{{artist.name}}'>{{artist.name}}</a>
+			</div>
+		</div>
+	</div>
+	<h1>LastFM one page app</h1>
+
+	
+</div>
+
+<hr>
+<div id='container'>
+	<div ng-view></div>
+</div>
+</body>
+
+</html>

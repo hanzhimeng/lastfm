@@ -1,0 +1,50 @@
+<div class='container-fluid view-frame'>
+	<div class='row'>
+		<div class="col-md-3">
+			<img src='{{artist.image[4]["#text"]}}'>
+
+			
+		</div>
+		<div class="col-md-9">
+			<h1 class='name'>{{artist.name}}</h1>
+			
+			<dl ng-hide="!artist.bandmembers" class="dl-horizontal">
+				<dt>Members:</dt>
+				<dd>
+					<ul class="list-unstyled">
+					<li ng-repeat='member in artist.bandmembers.member'>
+						{{member.name}}
+						<span  ng-hide="!member.yearfrom"> Joined: {{member.yearfrom}} </span>
+					</li>
+					</ul>
+				</dd>
+			</dl>
+
+			<dl class="dl-horizontal">
+				<dt>Bio:</dt>
+			
+				<dd class='artist_summary'>{{artist.bio.summary}}</dd>
+			</dl>
+			<dl class="dl-horizontal">
+				<dt>Play count:</dt>
+				<dd>{{artist.stats.playcount}}</dd>
+			</dl>
+			<dl class="dl-horizontal">
+				<dt>Listener:</dt>
+				<dd>{{artist.stats.listeners}}</dd>
+			</dl>
+			<dl class="dl-horizontal">
+			<dt>Similar artists:</dt>
+			<dd><ul class="list-unstyled list-inline">
+			<li class='similar' ng-repeat='artist in artist.similar.artist'>
+				
+				<a href='#/artist/{{artist.name}}'><img class='similar' src="{{artist.image[2]['#text']}}"></a>
+				{{artist.name}}
+			</li>
+
+			</ul>
+			</dd>
+			</dl>
+		</div>
+	</div>
+</div>

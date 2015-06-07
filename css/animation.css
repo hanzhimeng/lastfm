@@ -1,0 +1,35 @@
+.container {
+  position: relative;
+}
+
+/*.view-frame.ng-enter, .view-frame.ng-leave {
+  background: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}*/
+
+.view-frame{
+  -webkit-animation: 1s;
+  -moz-animation: 1s;
+  -o-animation: 1s ;
+  animation: 0.5s ;
+}
+
+.view-frame.ng-enter {
+  opacity: 0;
+}
+
+.view-frame.ng-leave {
+  opacity: 1;
+}
+
+
+.view-frame.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+
+.view-frame.ng-leave.ng-leave-active {
+  opacity: 0;
+}

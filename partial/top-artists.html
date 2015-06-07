@@ -1,0 +1,11 @@
+<div masonry='{ "transitionDuration" : "0.4s" , "itemSelector" : ".artist"}' id='topartist'>
+	<div masonry-tile class='artist' ng-repeat="artist in artists">
+		<a href='#/artist/{{artist.name}}'><img src="{{artist.image[3]['#text']}}"></a>
+		<p>
+			<span class='artist_name h4'>{{artist.name}}</span> <br>
+			Playcount: {{artist.playcount}}<br>
+			Fans: {{artist.listeners}}<br>
+			<a href='{{artist.url}}'>LastFM profile</a>
+		</p>
+	</div>
+</div>
